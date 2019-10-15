@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Car List</title>
+</head>
+<body>
+
+<h1>Job Form</h1>
+<form action="#" th:action="@{/process}" th:object="${car}" method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    Car: <input type="text" th:field="*{makeName}" />
+    <span th:if="${#fields.hasErrors('makeName')}" th:errors="*{makeName}"></span><br />
+
+    Due Date: <input type="text" th:field="*{modelName}" />
+    <span th:if="${#fields.hasErrors('modelName')}" th:errors="*{modelName}"></span><br />
+
+    Priority: <input type="text" th:field="*{modelYear}" />
+    <span th:if="${#fields.hasErrors('modelYear')}" th:errors="*{modelYear}"></span><br />
+
+    <input type="submit" value="Submit"  />
+
+
+
+
+</form>
+
+</body>
+</html>
